@@ -1,11 +1,28 @@
+{include file="header.tpl"}
 
-<ul class="list-group">
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col" >#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Dni</th>
+        </tr>
+    </thead>
+    <tbody>
     {foreach from=$students item=$student}
-        <li class='list-group-item d-flex justify-content-between align-items-center'>
-            <span> <b>{$student->nombre}</b> - {$student->edad|truncate:25} (id {$student->carrera_id}) </span>
-        </li>
+        
+            <tr>
+                <td>{$student->id}</td>
+                <td>{$student->nombre} </td>
+                <td>{$student->edad} </td>
+                <td>{$student->dni} </td>
+            </tr>
+        
     {/foreach}
-</ul>
+    </tbody>    
+</table>
 
 <p class="mt-3"><small>Mostrando {$lenght} alumnos</small></p>
 
+{include file="footer.tpl"}
