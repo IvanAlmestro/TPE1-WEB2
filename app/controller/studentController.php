@@ -1,9 +1,9 @@
 <?php
 
-require_once 'MusicModel.php';
-require_once 'MusicView.php';
+require_once 'studentModel.php';
+require_once 'studentView.php';
 
-class MusicController{
+class studentsController{
     private $model;
     private $view;
  
@@ -11,7 +11,7 @@ class MusicController{
         $this->model = new MusicModel();
         $this->view = new MusicView();
     }
-    function musicByGenre() {
+    /*function musicByGenre() {
         // verifica datos obligatorios
         if (!isset($_GET['genre']) || empty($_GET['genre'])) {
             $this->view->renderError();
@@ -23,7 +23,7 @@ class MusicController{
         $movies = $this->model->getMoviesByGenre($genre);
         // actualizo la vista
         $this->view->renderMoviesByGenre($genre, $movies);
-    }
- 
-
+    
+    */
+}
  
