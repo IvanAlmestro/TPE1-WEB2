@@ -1,0 +1,20 @@
+body{
+    background-color: rgb(175, 175, 223);
+}
+nav{
+    background-color: rgb(199, 205, 255);
+}
+table, td, th, tr{
+    border: solid black 2px;
+    background-color:rgb(199, 205, 255);
+    text-align: center;    
+}
+td.pad{
+    padding: 10px;
+    
+}
+.title-list{
+    font-size: 1.4em;
+    text-align: center;
+    margin: 2em;
+}

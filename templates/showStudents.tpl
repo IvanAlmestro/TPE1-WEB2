@@ -13,10 +13,10 @@
     {foreach from=$students item=$student}
         
             <tr>
-                <td>{$student->id}</td>
-                <td>{$student->nombre} </td>
-                <td>{$student->edad} </td>
-                <td>{$student->dni} </td>
+                <td class="pad">{$student->id}</td>
+                <td class="pad">{$student->nombre} </td>
+                <td class="pad">{$student->edad} </td>
+                <td class="pad">{$student->dni} </td>
             </tr>
         
     {/foreach}
