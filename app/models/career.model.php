@@ -1,6 +1,6 @@
 <?php
 
-class StudentModel{
+class CareerModel{
 
     private $db;
 
@@ -8,13 +8,13 @@ class StudentModel{
         $this->db = new PDO('mysql:host=localhost;'.'dbname=db_universidad;charset=utf8', 'root', '');
     }
 
-    function getAllStudents(){
+    function getAllCareers(){
 
-        $query = $this->db->prepare("SELECT * FROM estudiantes");
+        $query = $this->db->prepare("SELECT * FROM carreras_grado");
         $query->execute();
-        $students = $query->fetchAll(PDO::FETCH_OBJ);
+        $careers = $query->fetchAll(PDO::FETCH_OBJ);
         
-        return $students;
+        return $careers;
     }
  
 }

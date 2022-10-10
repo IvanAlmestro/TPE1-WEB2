@@ -1,21 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Movies</title>
-</head>
-<body>
+<form action="add" method="POST" class="my-4">
+    <div class="row">
+        <div class="col-9">
+            <div class="form-group">
+                <label>Título</label>
+                <input name="title" type="text" class="form-control">
+            </div>
+        </div>
 
-   <h1>Musica por género</h1>
+        <div class="col-3">
+            <div class="form-group">
+                <label>Prioridad</label>
+                <select name="priority" class="form-control">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+        </div>
+    </div>
 
-   <ul>
-       <li><a href="peliculas.php?genre=trap">Trap</a></li>
-       <li><a href="peliculas.php?genre=reggaeton">Reggeaton</a></li>
-       <li><a href="peliculas.php?genre=pop">pop</a></li>
-       <li><a href="peliculas.php?genre=trap latino">Trap Latino</a></li>
-       <li><a href="peliculas.php?genre=soul">Soul</a></li>
-   </ul>
-   form
-</body>
-</html>
+    <div class="form-group">
+        <label>Descripcion</label>
+        <textarea name="description" class="form-control" rows="3"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Guardar</button>
+</form>
