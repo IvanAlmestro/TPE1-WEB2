@@ -17,20 +17,23 @@ class studentsController{
         $students = $this->model->getAllStudents();
         $this->view->showStudents($students);
     }
+    function addStudent(){
 
-    /*function musicByGenre() {
-        // verifica datos obligatorios
-        if (!isset($_GET['genre']) || empty($_GET['genre'])) {
-            $this->view->renderError();
-            return;
-        }
-        // obtiene el genero enviado por GET
-        $genre = $_GET['genre'];
-        // obtengo las peliculas del modelo
-        $movies = $this->model->getMoviesByGenre($genre);
-        // actualizo la vista
-        $this->view->renderMoviesByGenre($genre, $movies);
+        $nombre = $_POST['name'];
+        $edad = $_POST['age'];
+        $dni = $_POST['dni'];
+        $carrera = $_POST['career'];
+        
+        $id = $this->model->addStudents($nombre, $edad, $dni, $carrera);
+
+        header("Location: " . BASE_URL); 
+    }
+
+    function borrarProductos($id) 
+    {
+        $this->modelo->borrarProductos($id);
+        header("Location: " . BASE_URL);
+        
+    }
     
-    */
 }
- 

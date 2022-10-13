@@ -16,5 +16,12 @@ class StudentModel{
         
         return $students;
     }
- 
+    
+    public function addStudents($nombre, $edad, $dni, $carrera){
+        
+        $query = $this->db->prepare("INSERT INTO estudiantes (nombre, edad, dni, carrera_id)  VALUES(?,?,?,?)");
+        $query->execute([$nombre, $edad, $dni, $carrera]);
+
+        return $this->db->lastInsertId();
+    }
 }

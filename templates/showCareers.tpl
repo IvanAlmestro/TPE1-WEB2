@@ -1,5 +1,8 @@
 {include file="header.tpl"}
 
+{include file="form_alta.tpl"}
+
+<h1 class="title-list"> Listado de carreras </h1>
 <table class="table">
     <thead>
         <tr>
@@ -18,6 +21,11 @@
                 <td class="pad">{$career->carrera} </td>
                 <td class="pad">{$career->duracion} </td>
                 <td class="pad">{$career->sede} </td>
+                <td class="pad">
+                    <button type="button" class="btn btn-primary">Borrar</button>
+                    <button type="button" class="btn btn-secondary">Editar</button> 
+                </td>
+                
                 
             </tr>
         

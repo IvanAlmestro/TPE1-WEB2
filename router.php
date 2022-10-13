@@ -27,7 +27,9 @@
             $careerController->showCareers();
             break;
         case 'add':
-            
+            $studentController = new studentsController();
+            $studentController->addStudent();
+            break;
 
         default:
             echo('404 Page not found');

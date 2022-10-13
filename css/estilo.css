@@ -3,7 +3,7 @@ nav{
 }
 
 body{
-    background-color: blue;
+    background-color: rgb(255, 212, 172);
 }
 .title-list{
     font-size: 1.4em;
@@ -12,4 +12,11 @@ body{
 .table{
     margin: 10px;
     margin-top: 30px;
+}
+td, th, tr{
+    border: solid black 1px;
+    
+}
+#form{
+    background-color: aquamarine;
 }
