@@ -24,4 +24,8 @@ class StudentModel{
 
         return $this->db->lastInsertId();
     }
+    function deleteStudent($id){
+        $query  = $this->db->prepare('DELETE FROM `estudiantes` WHERE id = (?)');
+        $query->execute([$id]);
+    }
 }

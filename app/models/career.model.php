@@ -16,5 +16,16 @@ class CareerModel{
         
         return $careers;
     }
+    public function addCareer ($carrera, $duracion, $sede){
+        
+        $query = $this->db->prepare("INSERT INTO carreras_grado (carrera, duracion, sede)  VALUES(?,?,?)");
+        $query->execute([$carrera, $duracion, $sede]);
+
+        return $this->db->lastInsertId();
+    }
+    function deleteCareer($id){
+        $query  = $this->db->prepare('DELETE FROM `carreras_grado` WHERE id = (?)');
+        $query->execute([$id]);
+    }
  
 }

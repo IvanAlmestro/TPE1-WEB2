@@ -29,11 +29,9 @@ class studentsController{
         header("Location: " . BASE_URL); 
     }
 
-    function borrarProductos($id) 
-    {
-        $this->modelo->borrarProductos($id);
-        header("Location: " . BASE_URL);
-        
+    function deleteStudent($id){
+        $this->model->deleteStudent($id);
+        header("Location: " . BASE_URL); 
     }
     
 }

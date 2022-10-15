@@ -22,7 +22,7 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="about">Alumnos</a>
+                    <a class="nav-link" aria-current="page" href="aboutStudent">Alumnos</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="careers">Carreras</a>

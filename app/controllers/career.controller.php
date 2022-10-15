@@ -17,5 +17,20 @@ class careersController{
         $careers = $this->model->getAllCareers();
         $this->view->showCareers($careers);
     }
+    function addCareer(){
+
+        $carrera = $_POST['career'];
+        $duracion = $_POST['duration'];
+        $sede = $_POST['sede'];
+        
+        $id = $this->model->addCareer($carrera, $duracion, $sede);
+
+        header("Location: " . BASE_URL . "careers"); 
+    }
+
+    function deleteCareer($id){
+        $this->model->deleteCareer($id);
+        header("Location: " . BASE_URL . "careers"); 
+    }
 
 }

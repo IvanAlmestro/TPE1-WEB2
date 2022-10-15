@@ -1,9 +1,10 @@
 {include file="header.tpl"}
 
-{include file="form_alta.tpl"}
+{include file="form_alta_carreras.tpl"}
 
-<h1 class="title-list"> Listado de carreras </h1>
+
 <table class="table">
+<h1 class="title-list"> Listado de carreras </h1>
     <thead>
         <tr>
             <th>#</th>
@@ -22,7 +23,7 @@
                 <td class="pad">{$career->duracion} </td>
                 <td class="pad">{$career->sede} </td>
                 <td class="pad">
-                    <button type="button" class="btn btn-primary">Borrar</button>
+                    <a href='deleteCareer/{$career->id}' type="button" class="btn btn-primary">Borrar</a>
                     <button type="button" class="btn btn-secondary">Editar</button> 
                 </td>
                 

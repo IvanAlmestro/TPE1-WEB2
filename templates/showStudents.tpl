@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 
-{include file="form_alta.tpl"}
+{include file="form_alta_alumnos.tpl"}
 
 <h1 class="title-list"> Listado de Alumnos anotados </h1>
 
@@ -23,7 +23,7 @@
                 <td class="pad">{$student->edad} </td>
                 <td class="pad">{$student->dni} </td>
                 <td class="pad">
-                    <button type="button" class="btn btn-primary">Borrar</button>
+                    <a href='deleteStudent/{$student->id}' class="btn btn-primary">Borrar</a>
                     <button type="button" class="btn btn-secondary">Editar</button> 
                 </td>
                 

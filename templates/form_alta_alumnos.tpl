@@ -1,19 +1,20 @@
-<form action="add" method="POST" class="my-4" id="form">
+<h1> Agregar Alumnos </h1>
+<form action="addStudent" method="POST" class="my-4" id="form">
     <div class="row">
         <div class="col-9">
             <div class="form-group">
-                <label>Nombre</label>
+                <label>Nombre:</label>
                 <input name="name" type="text" class="form-control">
-                <label>edad</label>
+                <label>Edad:</label>
                 <input name="age" type="number" class="form-control">
-                <label>dni</label>
+                <label>Dni:</label>
                 <input name="dni" type="number" class="form-control">
             </div>
         </div>
 
         <div class="col-3">
             <div class="form-group">
-                <label>Carrera</label>
+                <label>Carrera:</label>
                 <select name="career" class="form-control">
                     <option value="1">Ingeniería En Sistemas</option>
                     <option value="2">TUDAI</option>
