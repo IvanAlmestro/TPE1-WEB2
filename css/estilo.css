@@ -9,7 +9,7 @@ nav{
    border: solid rgb(15, 15, 14) 1.5px;
    margin: 5px;
    border-radius: 0.5em;
-   background-color: white;
+   background-color: rgba(245, 212, 204, 0.609);
    padding: 2px;
 
 }
@@ -18,19 +18,16 @@ body{
 }
 .title-list{
     font-size: 1.4em;
-    text-align: center;
+    
 }
 .table{
     background-color: white;
     margin: 10px;
     margin-top: 30px;
-    width: auto;
-    
+    width: auto; 
 }
 td, th, tr{
     border: solid black 1px;
-    
-    
 }
 #form{
     height: 300px;

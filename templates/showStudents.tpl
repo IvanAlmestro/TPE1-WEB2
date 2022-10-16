@@ -24,14 +24,14 @@
                 <td class="pad">{$student->dni} </td>
                 <td class="pad">
                     <a href='deleteStudent/{$student->id}' class="btn btn-primary">Borrar</a>
-                    <button type="button" class="btn btn-secondary">Editar</button> 
+                    <a href='editStudents/{$student->id}'> <button type="button" class="btn btn-secondary">Editar</button></a> 
                 </td>
                 
             </tr>
-        
     {/foreach}
-    </tbody>    
+    </tbody>   
 </table>
+
 
 <p class="mt-3"><small>Mostrando {$lenght} alumnos</small></p>
 

@@ -4,10 +4,8 @@ require_once './libs/smarty-4.2.1/libs/Smarty.class.php';
 class StudentView {
 
     private $smarty;
-    private $title;
 
     function __construct(){
-        $this->title = "Lista de studiantes";
         $this->smarty  = new Smarty();
     }
 
@@ -18,6 +16,10 @@ class StudentView {
 
         // mostrar el tpl
         $this->smarty->display('showStudents.tpl');
+    }
+    function edit($students){
+        $this->smarty->assign('students', $students);
+        $this->smarty->display('templates/editStudents.tpl');
     }
 
 }
