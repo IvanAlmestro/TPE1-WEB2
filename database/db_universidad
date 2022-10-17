@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-10-2022 a las 02:05:05
+-- Tiempo de generación: 17-10-2022 a las 20:26:11
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -65,10 +65,28 @@ CREATE TABLE `estudiantes` (
 --
 
 INSERT INTO `estudiantes` (`id`, `nombre`, `edad`, `dni`, `carrera_id`) VALUES
-(1, 'Iván Almestro', 19, 44535277, 2),
+(1, 'Iván Almestro', 20, 44535277, 1),
 (2, 'Jazmín Reynoso', 19, 45303093, 6),
-(3, 'Lucas Gómez', 23, 42034055, 3),
-(4, 'Tomas Echavarria', 23, 43434354, 2);
+(3, 'Lucas Gómez', 23, 42034055, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `email` varchar(250) NOT NULL,
+  `password` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`email`, `password`, `id`) VALUES
+('ivan.almestro@hotmail.com', '$2y$10$gfBd9fY2aoPPywM4Re.j2uMVuR3GB5.rQyJldGvKvH/J7Demd4mBi', 2);
 
 --
 -- Índices para tablas volcadas
@@ -88,6 +106,12 @@ ALTER TABLE `estudiantes`
   ADD KEY `carrera_id` (`carrera_id`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -95,13 +119,19 @@ ALTER TABLE `estudiantes`
 -- AUTO_INCREMENT de la tabla `carreras_grado`
 --
 ALTER TABLE `carreras_grado`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `estudiantes`
 --
 ALTER TABLE `estudiantes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
