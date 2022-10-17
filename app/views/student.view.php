@@ -22,4 +22,5 @@ class StudentView {
         $this->smarty->display('templates/editStudents.tpl');
     }
 
+
 }

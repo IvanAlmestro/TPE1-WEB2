@@ -20,4 +20,8 @@ class CareerView {
         $this->smarty->assign('careers', $careers);
         $this->smarty->display('templates/editStudents2.tpl');
     }
+    function editCareers($careers){
+        $this->smarty->assign('careers', $careers);
+        $this->smarty->display('templates/editCareer.tpl');
+    }
 }

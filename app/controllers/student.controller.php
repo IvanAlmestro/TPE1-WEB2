@@ -53,4 +53,9 @@ class studentsController{
         $this->model->editStudents($nombre, $edad, $dni ,$carrera_id, $id);
         header("Location: " . BASE_URL);
     }
+    function showEditStudentForm($id){
+        $this->helper->checkLoggedIn();
+        $students = $this->model->getStudentId($id);
+        $this->view->edit($students);
+    }
 }

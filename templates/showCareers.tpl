@@ -24,7 +24,7 @@
                 <td class="pad">{$career->sede} </td>
                 <td class="pad">
                     <a href='deleteCareer/{$career->id}' type="button" class="btn btn-primary">Borrar</a>
-                    <button type="button" class="btn btn-secondary">Editar</button> 
+                    <a href='editCareer/{$career->id}'> <button type="button" class="btn btn-secondary">Editar</button></a> 
                 </td>
                 
                 

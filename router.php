@@ -55,6 +55,14 @@
             $id = $params[1];
             $careerController->deleteCareer($id);
             break;
+        case 'editCareer':
+            $careerController = new careersController();
+            $careerController->showEditCareers($params[1]);
+            break;
+        case 'editCareers':
+            $careerController = new careersController();
+            $careerController->editCareers($params[1]);
+            break;
         case 'login':
             $userController = new userController();
             $userController->showLogin();

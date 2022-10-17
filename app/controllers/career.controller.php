@@ -40,6 +40,17 @@ class careersController{
         $careers = $this->model->getAllCareers();
         $this->view->editStudents($careers);
     }
-
-
+    function editCareers($id){
+        $this->helper->checkLoggedIn();
+        $carrera = $_POST['career'];
+        $duracion = $_POST['duration'];
+        $sede = $_POST['sede'];
+        $this->model->editCareers($carrera, $duracion, $sede, $id);
+        header("Location: " . BASE_URL . "careers");
+    }
+    function showEditCareers($id){
+        $this->helper->checkLoggedIn();
+        $careers = $this->model->getCareerId($id);
+        $this->view->editCareers($careers);
+    }
 }
