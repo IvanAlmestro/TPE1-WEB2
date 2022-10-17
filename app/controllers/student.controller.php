@@ -17,6 +17,7 @@ class studentsController{
     }
 
     function showStudents() {
+        $this->helper->checkInicio();
         $students = $this->model->getAllStudents();
         $this->view->showStudents($students);
     }
@@ -27,6 +28,7 @@ class studentsController{
         $this->view->show1Student($students);
     }
     function addStudent(){
+        $this->helper->checkLoggedIn();
         $nombre = $_POST['name'];
         $edad = $_POST['age'];
         $dni = $_POST['dni'];
@@ -36,6 +38,7 @@ class studentsController{
     }
 
     function deleteStudent($id){
+        $this->helper->checkLoggedIn();
         $this->model->deleteStudent($id);
         header("Location: " . BASE_URL); 
     }
@@ -47,7 +50,7 @@ class studentsController{
     }
 
     function editStudent($id){
-        $this->helper->checkLoggedIn();
+        
         $nombre = $_POST['nameEdit'];
         $edad = $_POST['ageEdit'];
         $dni = $_POST['dniEdit'];

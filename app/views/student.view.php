@@ -7,6 +7,7 @@ class StudentView {
 
     function __construct(){
         $this->smarty  = new Smarty();
+     
     }
 
     function showStudents($students) {

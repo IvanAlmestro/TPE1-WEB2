@@ -2,38 +2,40 @@
 
 {include file="form_alta_carreras.tpl"}
 
-
-<table class="table">
 <h1 class="title-list"> Listado de carreras </h1>
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Carrera</th>
-            <th>Duracion</th>
-            <th>Sede</th>
-         
-        </tr>
-    </thead>
-    <tbody>
-    {foreach from=$careers item=$career}
-        
+<div id="div-tabla">
+    
+    <table class="table">
+    
+        <thead>
             <tr>
-                <td class="pad">{$career->id} </td>
-                <td class="pad">{$career->carrera} </td>
-                <td class="pad">{$career->duracion} </td>
-                <td class="pad">{$career->sede} </td>
-                <td class="pad">
-                    <a href='deleteCareer/{$career->id}' type="button" class="btn btn-primary">Borrar</a>
-                    <a href='editCareer/{$career->id}'> <button type="button" class="btn btn-secondary">Editar</button></a> 
-                </td>
-                
-                
+                <th>#</th>
+                <th>Carrera</th>
+                <th>Duracion</th>
+                <th>Sede</th>
+            
             </tr>
-        
-    {/foreach}
-    </tbody>    
-</table>
-
-<p class="mt-3"><small>Mostrando {$count} alumnos</small></p>
-
+        </thead>
+        <tbody>
+        {foreach from=$careers item=$career}
+            
+                <tr>
+                    <td class="pad">{$career->id} </td>
+                    <td class="pad">{$career->carrera} </td>
+                    <td class="pad">{$career->duracion} </td>
+                    <td class="pad">{$career->sede} </td>
+                    {if isset($smarty.session.USER_ID)}
+                    <td class="pad">
+                        <a href='deleteCareer/{$career->id}' type="button" class="btn btn-primary">Borrar</a>
+                        <a href='editCareer/{$career->id}'> <button type="button" class="btn btn-secondary">Editar</button></a> 
+                    </td>
+                    {/if}
+                    
+                </tr>
+            
+        {/foreach}
+        </tbody>    
+    </table>
+</div>
+<p class="p_cantidad"><small>Mostrando {$count} alumnos</small></p>
 {include file="footer.tpl"}

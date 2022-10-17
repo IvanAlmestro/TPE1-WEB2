@@ -1,5 +1,6 @@
 
 {if isset($smarty.session.USER_ID)}
+    
     <h1> Agregar Alumnos </h1>
     <form action="addStudent" method="POST" class="my-4" id="form">
         <div class="row">

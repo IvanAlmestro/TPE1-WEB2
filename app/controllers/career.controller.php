@@ -17,26 +17,28 @@ class careersController{
     }
 
     public function showCareers() {
+        $this->helper->checkInicio();
         $careers = $this->model->getAllCareers();
         $this->view->showCareers($careers);
     }
     function addCareer(){
-
+        $this->helper->checkLoggedIn();
         $carrera = $_POST['career'];
         $duracion = $_POST['duration'];
         $sede = $_POST['sede'];
         
-        $id = $this->model->addCareer($carrera, $duracion, $sede);
+        $this->model->addCareer($carrera, $duracion, $sede);
 
         header("Location: " . BASE_URL . "careers"); 
     }
 
     function deleteCareer($id){
+        $this->helper->checkLoggedIn();
         $this->model->deleteCareer($id);
         header("Location: " . BASE_URL . "careers"); 
     }
     function showEditCareer(){
-        $this->helper->checkInicio();
+        $this->helper->checkLoggedIn();
         $careers = $this->model->getAllCareers();
         $this->view->editStudents($careers);
     }

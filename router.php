@@ -19,14 +19,17 @@
     
 
     switch ($params[0]) {
-        
         case 'login':
             $userController = new userController();
-            $userController->showLogin();
+            $userController->showFormLogin();
             break;
         case 'validate':
             $userController = new userController();
             $userController->validateUser(); 
+            break;
+        case 'logout':
+            $userController = new userController();
+            $userController->logout();
             break;
         case 'aboutStudent':
             $studentController = new studentsController();

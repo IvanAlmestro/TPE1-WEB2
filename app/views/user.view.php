@@ -8,8 +8,8 @@ class userView {
         $this->smarty = new Smarty(); 
     }
 
-    function showLogin($error = null) {
+    function showFormLogin($error = null) {
         $this->smarty->assign("error", $error);
-        $this->smarty->display('login.tpl');
+        $this->smarty->display('templates/FormLogin.tpl');
     }
 }

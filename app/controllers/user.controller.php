@@ -11,8 +11,8 @@ class userController{
         $this->view = new userView();
     }
 
-    public function showLogin() {
-        $this->view->showLogin();
+    public function showFormLogin() {
+        $this->view->showFormLogin();
     }
 
     public function validateUser() {
@@ -31,7 +31,7 @@ class userController{
             header("Location: " . BASE_URL);
 
         } else {
-           $this->view->showLogin("El usuario o la contraseña no existe o no es correcta.");
+           $this->view->showFormLogin("El usuario o la contraseña no existe o no es correcta.");
         } 
     }
    

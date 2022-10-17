@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-10-2022 a las 20:26:11
+-- Tiempo de generación: 18-10-2022 a las 00:19:39
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -65,7 +65,7 @@ CREATE TABLE `estudiantes` (
 --
 
 INSERT INTO `estudiantes` (`id`, `nombre`, `edad`, `dni`, `carrera_id`) VALUES
-(1, 'Iván Almestro', 20, 44535277, 1),
+(1, 'Iván Almestro', 20, 44535277, 5),
 (2, 'Jazmín Reynoso', 19, 45303093, 6),
 (3, 'Lucas Gómez', 23, 42034055, 3);
 
@@ -86,7 +86,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`email`, `password`, `id`) VALUES
-('ivan.almestro@hotmail.com', '$2y$10$gfBd9fY2aoPPywM4Re.j2uMVuR3GB5.rQyJldGvKvH/J7Demd4mBi', 2);
+('ivan.almestro@hotmail.com', '$2y$10$gfBd9fY2aoPPywM4Re.j2uMVuR3GB5.rQyJldGvKvH/J7Demd4mBi', 2),
+('admin@hotmail.com', '$2a$12$uhioRiociwQ0t/6zgk2YWu9o40tG8zCoj7cIoNwWatLTUOHidMzHC', 3);
 
 --
 -- Índices para tablas volcadas
@@ -119,19 +120,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `carreras_grado`
 --
 ALTER TABLE `carreras_grado`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `estudiantes`
 --
 ALTER TABLE `estudiantes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas

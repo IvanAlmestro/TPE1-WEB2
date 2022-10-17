@@ -1,7 +1,7 @@
 {include 'header.tpl'}
 
-<div class="mt-5 w-25 mx-auto">
-    <h1>Login</h1>
+<div class="mt-5 w-25 mx-auto" id="div-form">
+    <h1>LOGIN</h1>
     <form method="POST" action="validate">
         <div class="form-group">
             <label for="email">Email:</label>
