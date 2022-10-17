@@ -7,12 +7,13 @@ nav{
 }
 .nav-link{
    border: solid rgb(15, 15, 14) 1.5px;
-   margin: 5px;
-   border-radius: 0.5em;
-   background-color: rgba(245, 212, 204, 0.609);
-   padding: 2px;
-
+   margin-left: 8px;
+   border-radius: 0.2em;
+   background-color: rgb(255, 255, 255);
+   padding: 1.5px;
+   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
 body{
     background-color: rgb(255, 212, 172);
 }
@@ -24,7 +25,7 @@ body{
     background-color: white;
     margin: 10px;
     margin-top: 30px;
-    width: auto; 
+    width: 60%; 
 }
 td, th, tr{
     border: solid black 1px;

@@ -9,33 +9,38 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilo.css">
-    <title>Universidad - TodoList</title>
+    <title>Universidad</title>
 </head>
 <body class="background">
     <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-              
+              <a class="navbar-brand" href="">Universidad</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="login">Ingresar</a>
-                  </li>
+                <ul class="navbar-nav d-flex">
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="aboutStudent">Alumnos</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="careers">Carreras</a>
                   </li>
-                  
+                  {if !isset($smarty.session.USER_ID)}
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="login">Login</a>
+                  </li>
+                  {else} 
+                    <li class="nav-item ml-auto" >
+                    <a class="nav-link" aria-current="page" href="logout">Logout ({$smarty.session.USER_EMAIL})</a>
+                  </li>
+                  {/if}
                 </ul>
               </div>
             </div>
           </nav>
     </header>
-    <!-- inicio main container -->
+
     <main class="container">
 

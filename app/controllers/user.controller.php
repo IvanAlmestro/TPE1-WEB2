@@ -17,8 +17,8 @@ class userController{
 
     public function validateUser() {
 
-        $email = $_REQUEST['email'];
-        $password = $_REQUEST['password'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
         $user = $this->model->getUserEmail($email);
 
@@ -28,20 +28,13 @@ class userController{
             $_SESSION['USER_EMAIL'] = $user->email;
             $_SESSION['IS_LOGGED'] = true;
 
-            
-            $this->view->showLogin("Has logeado correctamente");
+            header("Location: " . BASE_URL);
+
         } else {
-           $this->view->showLogin("El usuario o la contraseña no existe.");
+           $this->view->showLogin("El usuario o la contraseña no existe o no es correcta.");
         } 
     }
-    function addEmail(){
-        $email = $_REQUEST['email'];
-        $password = password_hash($_REQUEST['password'], PASSWORD_BCRYPT);
-
-        $this->model->addUsuario($email, $password);
-
-        header("Location: " . BASE_URL);
-    }
+   
     function logout() {
         session_start();
         session_destroy();

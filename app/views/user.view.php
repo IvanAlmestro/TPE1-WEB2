@@ -1,5 +1,5 @@
 <?php
-require_once './libs/smarty-4.2.1/libs/Smarty.class.php';
+require_once ('libs/smarty-4.2.1/libs/Smarty.class.php');
 
 class userView {
     private $smarty;
@@ -10,6 +10,6 @@ class userView {
 
     function showLogin($error = null) {
         $this->smarty->assign("error", $error);
-        $this->smarty->display('templates/login.tpl');
+        $this->smarty->display('login.tpl');
     }
 }

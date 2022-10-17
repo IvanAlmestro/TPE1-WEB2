@@ -19,10 +19,20 @@
     
 
     switch ($params[0]) {
+        
+        case 'login':
+            $userController = new userController();
+            $userController->showLogin();
+            break;
+        case 'validate':
+            $userController = new userController();
+            $userController->validateUser(); 
+            break;
         case 'aboutStudent':
             $studentController = new studentsController();
             $studentController->showStudents();
             break;
+        
         case 'showStudent':
             $studentController = new studentsController();
             $studentController->showStudentId($params[1]);
@@ -68,17 +78,7 @@
             $careerController = new careersController();
             $careerController->editCareers($params[1]);
             break;
-        case 'login':
-            $userController = new userController();
-            $userController->showLogin();
-            break;
-        case 'validate':
-            $userController = new userController();
-            $userController->validateUser(); 
-            break;
-        case 'register':
-            $userController = new userController();
-            $userController->addEmail(); 
+       
         default:
             echo('404 Page not found');
             break;
