@@ -11,6 +11,7 @@
             <th>Nombre</th>
             <th>Edad</th>
             <th>Dni</th>
+            <th>Acciones</th>
          
         </tr>
     </thead>
@@ -24,7 +25,8 @@
                 <td class="pad">{$student->dni} </td>
                 <td class="pad">
                     <a href='deleteStudent/{$student->id}' class="btn btn-primary">Borrar</a>
-                    <a href='editStudents/{$student->id}'> <button type="button" class="btn btn-secondary">Editar</button></a> 
+                    <a href='editStudents/{$student->id}'> <button type="button" class="btn btn-secondary">Editar</button></a>
+                    <a href='showStudent/{$student->id}'> <button type="button" class="btn btn-success">Ver</button></a>  
                 </td>
                 
             </tr>

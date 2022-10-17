@@ -10,25 +10,28 @@ class studentsController{
     private $view;
     private $helper;
 
-    public function __construct() {
+    function __construct() {
         $this->model = new StudentModel();
         $this->view = new StudentView();
         $this->helper = new userHelper();
     }
 
-    public function showStudents() {
+    function showStudents() {
         $students = $this->model->getAllStudents();
         $this->view->showStudents($students);
     }
-    function addStudent(){
 
+    function showStudentId($id){
+        $this->helper->checkInicio();
+        $students = $this->model->getStudentId($id);
+        $this->view->show1Student($students);
+    }
+    function addStudent(){
         $nombre = $_POST['name'];
         $edad = $_POST['age'];
         $dni = $_POST['dni'];
         $carrera = $_POST['career'];
-        
         $id = $this->model->addStudents($nombre, $edad, $dni, $carrera);
-
         header("Location: " . BASE_URL); 
     }
 

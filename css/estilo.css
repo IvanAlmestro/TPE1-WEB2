@@ -36,3 +36,9 @@ td, th, tr{
 h1{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+.detalle{
+    width: 100%;
+    background-color: white;
+    margin: 10px;
+    text-align: center;
+}

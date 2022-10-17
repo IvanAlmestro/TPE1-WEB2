@@ -21,6 +21,9 @@ class StudentView {
         $this->smarty->assign('students', $students);
         $this->smarty->display('templates/editStudents.tpl');
     }
-
-
+    function show1Student($students){
+        $smarty= new Smarty;
+        $smarty->assign('students', $students);
+        $smarty->display('templates/showDetails.tpl'); 
+    }
 }

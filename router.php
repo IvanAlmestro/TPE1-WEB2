@@ -23,6 +23,11 @@
             $studentController = new studentsController();
             $studentController->showStudents();
             break;
+        case 'showStudent':
+            $studentController = new studentsController();
+            $studentController->showStudentId($params[1]);
+
+            break;
         case 'addStudent':
             $studentController = new studentsController();
             $studentController->addStudent();
