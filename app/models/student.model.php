@@ -10,14 +10,21 @@ class StudentModel{
 
     function getAllStudents(){
 
-        $query = $this->db->prepare("SELECT * FROM estudiantes");
+        $query = $this->db->prepare("SELECT * 
+                                     FROM estudiantes 
+                                     INNER JOIN carreras_grado 
+                                     on estudiantes.carrera_id = carreras_grado.id_carrera");
         $query->execute();
         $students = $query->fetchAll(PDO::FETCH_OBJ);
         
         return $students;
     }
     function getStudentId($id){
-        $query = $this->db->prepare("SELECT * FROM `estudiantes` WHERE id = ?");
+        $query = $this->db->prepare("SELECT * 
+                                     FROM `estudiantes`
+                                     INNER JOIN `carreras_grado`
+                                     on estudiantes.carrera_id = carreras_grado.id_carrera 
+                                     WHERE id = ?");
         $query->execute([$id]);
         return $query->fetchAll(PDO::FETCH_OBJ);
     }    
@@ -29,13 +36,26 @@ class StudentModel{
 
         return $this->db->lastInsertId();
     }
+
     function deleteStudent($id){
         $query  = $this->db->prepare('DELETE FROM `estudiantes` WHERE id = (?)');
         $query->execute([$id]);
     }
+    function StudentsByCareer($id){
+
+        $query=$this->db->prepare("SELECT * 
+                                   FROM `estudiantes`
+                                   INNER JOIN carreras_grado 
+                                   on estudiantes.carrera_id = carreras_grado.id 
+                                   WHERE id = ?");
+        $query->execute([$id]);
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    }
 
     function editStudents($nombre, $edad, $dni, $carrera_id, $id){
-        $query = $this->db->prepare("UPDATE `estudiantes` SET nombre = ?, edad = ?, dni= ?, carrera_id= ? WHERE id = ?");
+        $query = $this->db->prepare("UPDATE `estudiantes` 
+                                     SET nombre = ?, edad = ?, dni= ?, carrera_id= ? 
+                                     WHERE id = ?");
         $query->execute([$nombre, $edad, $dni, $carrera_id, $id]);
     }
 

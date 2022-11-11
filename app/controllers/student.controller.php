@@ -1,19 +1,22 @@
 <?php
 
 require_once './app/models/student.model.php';
+require_once './app/models/career.model.php';
 require_once './app/views/student.view.php';
 require_once './app/helper/user.helper.php';
 
 class studentsController{
 
     private $model;
+    private $modelCareer;
     private $view;
     private $helper;
 
     function __construct() {
-        $this->model = new StudentModel();
+        $this->model= new StudentModel();
         $this->view = new StudentView();
         $this->helper = new userHelper();
+        $this->modelCareer = new CareerModel();
     }
 
     function showStudents() {
@@ -32,9 +35,20 @@ class studentsController{
         $nombre = $_POST['name'];
         $edad = $_POST['age'];
         $dni = $_POST['dni'];
-        $carrera = $_POST['career'];
+        $carrera = $_POST['SelectCareer'];
         $id = $this->model->addStudents($nombre, $edad, $dni, $carrera);
+  
         header("Location: " . BASE_URL); 
+    }
+    function studentByCareer($id){
+        $this->helper->checkLoggedIn();
+        $students=$this->model->StudentsByCareer($id);
+        $this->view->show1Student($students);
+
+    }
+    function showAddStudent(){
+       $careers = $this->modelCareer->getAllCareers();
+       $this->view->showSelectStudent($careers);
     }
 
     function deleteStudent($id){

@@ -1,8 +1,5 @@
 {include file="header.tpl"}
 
-
-{include file="form_alta_alumnos.tpl"}
-
 <h1 class="title-list"> Listado de Alumnos anotados </h1>
 <div id="div-tabla">
     
@@ -13,6 +10,7 @@
                 <th>Nombre</th>
                 <th>Edad</th>
                 <th>Dni</th>
+                <th>Carrera</th>
                 <th>Acciones</th>
             
             </tr>
@@ -26,6 +24,7 @@
                     <td class="pad">{$student->nombre} </td>
                     <td class="pad">{$student->edad} </td>
                     <td class="pad">{$student->dni} </td>
+                    <td class="pad">{$student->carrera} </td>
                     <td class="pad">
                         <a href='showStudent/{$student->id}'> <button type="button" class="btn btn-success">Ver</button></a>  
                     

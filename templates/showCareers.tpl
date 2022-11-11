@@ -20,14 +20,14 @@
         {foreach from=$careers item=$career}
             
                 <tr>
-                    <td class="pad">{$career->id} </td>
+                    <td class="pad">{$career->id_carrera} </td>
                     <td class="pad">{$career->carrera} </td>
                     <td class="pad">{$career->duracion} </td>
                     <td class="pad">{$career->sede} </td>
                     {if isset($smarty.session.USER_ID)}
                     <td class="pad">
-                        <a href='deleteCareer/{$career->id}' type="button" class="btn btn-primary">Borrar</a>
-                        <a href='editCareer/{$career->id}'> <button type="button" class="btn btn-secondary">Editar</button></a> 
+                        <a href='deleteCareer/{$career->id_carrera}' type="button" class="btn btn-primary">Borrar</a>
+                        <a href='editCareer/{$career->id_carrera}'> <button type="button" class="btn btn-secondary">Editar</button></a> 
                     </td>
                     {/if}
                     
@@ -37,5 +37,5 @@
         </tbody>    
     </table>
 </div>
-<p class="p_cantidad"><small>Mostrando {$count} alumnos</small></p>
+<p class="p_cantidad"><small>Mostrando {$count} carreras</small></p>
 {include file="footer.tpl"}

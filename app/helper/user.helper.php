@@ -5,8 +5,9 @@ class userHelper {
        public function checkLoggedIn() {
             //if para que si la sesion esta empezada no la vuelva a empezar porque tiraba error.
            if(!isset($_SESSION['IS_LOGGED'])){
-           session_start();
+                session_start();
            }
+
            if (!isset($_SESSION['IS_LOGGED'])) {
                header("Location: " . BASE_URL . 'login');
                die();

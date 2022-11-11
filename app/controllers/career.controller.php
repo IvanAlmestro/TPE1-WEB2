@@ -27,8 +27,7 @@ class careersController{
         $duracion = $_POST['duration'];
         $sede = $_POST['sede'];
         
-        $this->model->addCareer($carrera, $duracion, $sede);
-
+        $this->model->addCareer($carrera, $duracion, $sede);      
         header("Location: " . BASE_URL . "careers"); 
     }
 
